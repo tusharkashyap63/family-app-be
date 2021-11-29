@@ -11,9 +11,9 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/:channelId', async (req, res) => {
   try {
-    const tasks = await Task.find();
+    const tasks = await Task.find({ channelId: req.params.channelId });
     res.send(tasks);
   } catch (error) {
     res.send(error);

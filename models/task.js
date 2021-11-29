@@ -10,6 +10,11 @@ const taskSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  channelId: {
+    type: String,
+    required: true,
+  },
 });
 
-module.export = mongoose.model('task', taskSchema);
+const Task = mongoose.model('Task', taskSchema);
+module.exports = Task;
